@@ -21,7 +21,7 @@ class ApiPokemon:
               f'Статус код ответа: {self.response.status_code}')
         return self
 
-    def change_pokemon(self,new_pokemon_name, new_photo_id, url=url, pokemon_id=None):
+    def change_pokemon(self, new_pokemon_name, new_photo_id, url=url, pokemon_id=None):
         if pokemon_id is None:
             pokemon_id = self.pokemon_id
         self.response = requests.put(url=url, headers=Cgf.HEADERS, json={
@@ -46,7 +46,12 @@ class ApiPokemon:
         return self
 
 
-pokemon = ApiPokemon()
-pokemon.create_pokemon()
-pokemon.change_pokemon(new_pokemon_name='Новая сабака', new_photo_id=2)
-pokemon.catch_pokemon()
+def my_pokemon():
+    pokemon = ApiPokemon()
+    pokemon.create_pokemon()
+    pokemon.change_pokemon(new_pokemon_name='Новая сабака', new_photo_id=2)
+    pokemon.catch_pokemon()
+
+
+# Starting the test manually
+my_pokemon()

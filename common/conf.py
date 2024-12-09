@@ -1,6 +1,9 @@
+from sens_inf import MyData
+
+
 class Cgf:
-    TOKEN = '471a6700525e0d0c32cff970cb441077'
-    TRAINER_ID = 21298
+    TOKEN = MyData.my_token  # Enter your token
+    TRAINER_ID = MyData.my_trainer_id  # Enter your trainer id
     URL = 'https://api.pokemonbattle.ru/v2'
     HEADERS = {'trainer_token': TOKEN, 'Content-Type': 'application/json'}
     CREATE_POKEMON_BODY = {
@@ -8,6 +11,6 @@ class Cgf:
         "photo_id": 1
     }
     VALID = {
-        'email': 'pelevin.d99@yandex.ru',
-        'password': 'Parolotpokemon1'
+        'email': MyData.my_email,  # Enter valid mail
+        'password': MyData.me_password  # Enter valid password
     }
